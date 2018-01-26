@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Jon White - Contact</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+	<div class="container">
+		<header>
+			<div class="main-header">
+				<div class="name-tag"><h1>Jon White</h1></div>
+				<ul>
+					<li><a class="page-link" href="index.html">About</a></li>
+					<li><a class="page-link" href="portfolio.html">Portfolio</a></li>
+					<li><a class="page-link" href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="center-content">
+			<div class="main-content">
+				<h2>Contact</h2>
+				<form class="contact-form">
+					<h4>Name</h4>
+					<input id="submitter-name" type="text" placeholder="John Smith" name="">
+					<h4>Email</h4>
+					<input id="submitter-email" type="email" placeholder="example@gmail.com" name="">
+					<h4>Message</h4>
+					<textarea name="" id="submitter-message" cols="30" rows="10"></textarea>
+					<a id="send-btn" class="btn" href="mailto:jon.white2@gmail.com" onmouseover="sendMessage()">Submit</a>
+				</form>
+			</div>
+			<aside class="connect-with-me">
+				<h3>Connect with Me</h3>
+				<ul>
+					<li>
+						<a href="https://github.com/MotionSwing" title="Fork me on GitHub">
+							<img class="icon" src="assets/images/github-128.png" alt="GitHub">
+						</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/jonathan-white-ba4a2761/" title="Connect with me on Linkedin">
+							<img class="icon" src="assets/images/linkedin-128.png" alt="Linkedin">
+						</a>
+					</li>
+					<li>
+						<a href="https://stackoverflow.com/users/edit/2203530" title="Answer my questions on StackOverflow">
+							<img class="icon" src="assets/images/stackoverflow-128.png" alt="StackOverflow">
+						</a>
+					</li>
+				</ul>
+			</aside>			
+		</div>
 
+		<footer>
+			<p>&copy; Copyright 2018 Jon White</p>
+		</footer>
+	</div>
+	<script>
+
+		function sendMessage() {
+			var sName = document.getElementById('submitter-name').value;
+			var sEmail = document.getElementById('submitter-email').value;
+			var sMessage = document.getElementById('submitter-message').value;
+
+			var eMessage = "mailto:jon.white2@gmail.com?Subject=I%20have%20a%20question%20for%20you%20Jon%20White&body=";
+			eMessage += "Name%3A%20" + sName.replace(/\s/g, "%20") + "%0D";
+			eMessage += "Email%3A%20" + sEmail.replace(/\./g, "%2E").replace(/\@/g, "%40") + "%0D";
+			eMessage += "Message%3A%20";
+			eMessage += sMessage.replace(/\s/g, "%20");
+
+			console.log(eMessage);
+			document.getElementById('send-btn').href = eMessage;
+		}
+	</script>
 </body>
 </html>
