@@ -2,9 +2,7 @@
 /*----General----*/
 /*---------------*/
 
-* {
-	box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
 	color: #777777;
@@ -17,9 +15,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: "Georgia", Times, "Times New Roman", serif;
 }
 
-h1 {
-	font-size: 25px;
-}
+h1 { font-size: 25px; }
 
 /*-----------------*/
 /*----Container----*/
@@ -34,9 +30,7 @@ h1 {
 /*----ClearFix----*/
 /*-----------------*/
 
-.clearfix {
-	clear: both;
-}
+.clearfix { clear: both; }
 
 .clearfix::before,
 .clearfix::after {
@@ -44,10 +38,7 @@ h1 {
 	display: table;
 }
 
-.clearfix::after {
-	clear: both;
-}
-
+.clearfix::after { clear: both; }
 
 /*--------------*/
 /*----Header----*/
@@ -67,18 +58,47 @@ header {
 }
 
 .main-header .name-tag {
-	background-color: #4aaaa5;
+	position: relative;
+	float: left;
 	width: 200px;
 	height: 100%;
-	text-align: center;
-	float: left;
 	margin-right: 528px;
-}
-
-.main-header .name-tag h1 {
+	background-color: #4aaaa5;
 	color: #fff;
 	line-height: 3em;
 	font-weight: 800;
+	text-align: center;
+	opacity: 0;
+	-webkit-animation: slide-right 1s 2s linear forwards;
+	-o-animation: slide-right 1s 2s linear forwards;
+	animation: slide-right 1s 2s linear forwards;
+}
+
+.main-header .name-tag::before {
+	position: absolute;
+	top: 15px;
+	left: -60px;
+	content: '';
+	width: 50px;
+	height: 40px;
+	border-top: 2px solid #bbb;
+	border-bottom: 2px solid #bbb;
+	-webkit-animation: hidethis 500ms 2s linear forwards;
+	-o-animation: hidethis 500ms 2s linear forwards;
+	animation: hidethis 1s 2s linear forwards;
+}
+
+.main-header .name-tag::after {
+	position: absolute;
+	top: 35px;
+	left: -30px;
+	content: '';
+	width: 20px;
+	height: 1px;
+	border-top: 2px solid #bbb;
+	-webkit-animation: hidethis 1s 2s linear forwards;
+	-o-animation: hidethis 1s 2s linear forwards;
+	animation: hidethis 1s 2s linear forwards;
 }
 
 .main-header li {
@@ -86,6 +106,25 @@ header {
 	float: left;
 	margin: 15px;
 	line-height: 3em;
+	opacity: 0;
+}
+
+.main-header .menuitem-1 {
+	-webkit-animation: bounce 2s 400ms linear forwards;
+	-o-animation: bounce 2s 400ms linear forwards;
+	animation: bounce 2s 400ms linear forwards;	
+}
+
+.main-header .menuitem-2 {
+	-webkit-animation: bounce 2s 100ms linear forwards;
+	-o-animation: bounce 2s 100ms linear forwards;
+	animation: bounce 2s 100ms linear forwards;	
+}
+
+.main-header .menuitem-3 {
+	-webkit-animation: bounce 2s 700ms linear forwards;
+	-o-animation: bounce 2s 700ms linear forwards;
+	animation: bounce 2s 700ms linear forwards;	
 }
 
 .main-header li:last-child {
@@ -110,8 +149,6 @@ header {
 }
 .main-header a:hover {
 	border-bottom: 3px solid #4aaaa5;
-	border-bottom-right-radius: 2px;
-	border-bottom-left-radius: 2px;
 	color: #4aaaa5;
 }
 
@@ -145,7 +182,7 @@ footer p {
 }
 
 .main-content,
-.connect-with-me {
+#connect-with-me {
 	background-color: #ffffff;
 	float: left;
 	padding: 30px;
@@ -175,12 +212,19 @@ footer p {
 	width: 200px;
 }
 
+.main-content .profile {
+	-webkit-animation: popup 1s linear;
+	-o-animation: popup 1s linear;
+	animation: popup 1s linear;
+}
+
 .main-content p {
 	line-height: 2em;
 }
 
-.connect-with-me h3,
+#connect-with-me h3,
 .main-content h2 {
+	position: relative;
 	font-weight: bold;
 	padding-bottom: 1em;
 	margin-bottom: 1em;	
@@ -224,7 +268,6 @@ footer p {
 
 .main-content .btn:hover {
 	box-shadow: 0 0 10px rgba(0, 102, 255, 1);
-	/*box-shadow: 0 0 10px rgba(0, 0, 0, .6);*/
 }
 
 /* Portfolio Page */
@@ -232,6 +275,7 @@ footer p {
 	position: relative;
 	float: left;
 	margin-bottom: 30px;
+	overflow: hidden;
 }
 
 .portfolio-list li:nth-child(odd){
@@ -239,86 +283,330 @@ footer p {
 }
 
 .portfolio-list img {
+	position: relative;
 	width: 275px;
 	height: 206px;
 	margin: 0;
+	opacity: 0;
 }
 
 .portfolio-list h5 {
 	position: absolute;
 	bottom: 4%;
+	bottom: -120%;
 	width: 100%;
 	height: 30%;
 	background-color: #4aaaa5;
 	color: #fff;
 	font-size: 20px;	
 	text-align: center;
-	line-height: 2.7em;
+	line-height: 2.7em;	
+	-webkit-animation: bounce-b 2s 3s linear forwards;
+	-o-animation: bounce-b 2s 3s linear forwards;
+	animation: bounce-b 2s 3s linear forwards;
+}
+
+.icon-left {
+	-webkit-animation: move-right 500ms forwards;
+	-o-animation: move-right 500ms forwards;
+	animation: move-right 500ms forwards;
+}
+
+.icon-right {
+	-webkit-animation: move-left 500ms forwards;
+	-o-animation: move-left 500ms forwards;
+	animation: move-left 500ms forwards;
+}
+
+.row-1 {
+	animation-delay: 1000ms;
+}
+
+.row-2 {
+	animation-delay: 1500ms;
+}
+
+.row-3 {
+	animation-delay: 2000ms;
+}
+
+/* SVG Style 1 */
+
+.dash {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	transition: stroke-dashoffset 0.7s;  /* Controls the speed of the line */
+}
+
+.dash:hover {
+	stroke-dashoffset: 0;
+}
+
+.dash path {
+	pointer-events: all;  /* allows path fill color to change on hover*/
+}
+
+.dash path:hover {
+	fill: rgba(0,0,0,.3);
+}
+
+svg {
+	will-change: transform;
+
+	transition: transform 0.2s ease-out;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	fill: none;
+	stroke: #fff;
+	stroke-width: 1.5px;
 }
 
 /*-----------------------*/
 /*----Connect With Me----*/
 /*-----------------------*/
 
-.connect-with-me {
+#connect-with-me {
 	width: 270px;
+	overflow: hidden;
 }
 
-.connect-with-me h3 {
+#connect-with-me h3 {
 	font-size: 22px;
 	border-bottom: 2px solid #eee;
 }
 
-.connect-with-me .icon {
+#connect-with-me .icon {
+	position: relative;
 	width: 60px;
 	height: 60px;
 	overflow: hidden;
 }
 
-.connect-with-me ul {
+#connect-with-me ul {
 	margin: 0 auto;
 }
 
-.connect-with-me li {
+#connect-with-me li {
 	position: relative;
 	float: left;
 	margin-right: 9px;
 }
 
-.connect-with-me img:hover {
+#connect-with-me li.icon-1 {
+	-webkit-animation: icon-phase-in 1s linear forwards;
+	-o-animation: icon-phase-in 1s linear forwards;
+	animation: icon-phase-in 1s linear forwards;
+}
+
+#connect-with-me li.icon-2 {
+	opacity: 0;
+	-webkit-animation: icon-phase-in 1s 300ms linear forwards;
+	-o-animation: icon-phase-in 1s 300ms linear forwards;
+	animation: icon-phase-in 1s 300ms linear forwards;
+}
+
+#connect-with-me li.icon-3 {
+	opacity: 0;
+	-webkit-animation: icon-phase-in 1s 600ms linear forwards;
+	-o-animation: icon-phase-in 1s 600ms linear forwards;
+	animation: icon-phase-in 1s 600ms linear forwards;
+}
+
+#connect-with-me img:hover {
 	-webkit-animation: shrink-splash 1s 300ms linear;
 	-o-animation: shrink-splash 1s 300ms linear;
 	animation: shrink-splash 1s 300ms linear;
 }
 
-@keyframes shrink-splash {
-	0% {
-		transform: rotate(-360deg) scale(1);
-	}
+/*--------------*/
+/*----Animations----*/
+/*--------------*/
 
-	50% {
-		border-radius: 50%;
-	}
+/* Connect with Me Icons on hover */
+@keyframes shrink-splash {
+	0% { transform: rotate(-360deg) scale(1); }
+
+	50% { border-radius: 50%; }
 
 	60% {
 		transform: rotate(0deg) scale(.1);
 		border-radius: 50%;
 	}
 
-	65% {
-		transform: scale(1);
-	}
+	65% { transform: scale(1); }
 
-	70% {
-		transform: scale(1.2);
+	70% { transform: scale(1.2); }
+
+	100% { transform: scale(1); }
+}
+
+/* Connection with Me icons on page load */
+@keyframes icon-phase-in {
+	0% {
+		bottom: -120px;
+		opacity: 0;
+		transform: scale(.2);
 	}
 
 	100% {
+		bottom: 0;
+		opacity: 1;
 		transform: scale(1);
 	}
 }
 
+/* Navigation links on page load */
+@keyframes bounce {
+	0% {
+		opacity: 0;
+		top: -50px;
+	}
 
-/*--------------*/
-/*----Extras----*/
-/*--------------*/
+	20% {
+		opacity: 1;
+		top: 0;
+		transform: scale(1);
+	}
+
+	22% {
+		top: 0;
+		transform: scale(1.2, 1);
+	}
+
+	25% {
+		transform: scale(1);
+	}
+
+	30% {
+		top: -10px;
+	}
+
+	40% {
+		top: 0;
+	}
+
+	100% {
+		opacity: 1;
+		top: 0;
+	}
+}
+
+/* portfolio image banners */
+@keyframes bounce-b {
+	0% {
+		opacity: 0;
+		bottom: 120%;
+	}
+
+	20% {
+		opacity: 1;
+		bottom: 4%;
+		transform: scale(1);
+	}
+
+	22% {
+		bottom: 4%;
+		transform: scale(1.2, 1);
+	}
+
+	25% {
+		transform: scale(1);
+	}
+
+	30% {
+		bottom: 10%;
+	}
+
+	40% {
+		bottom: 4%;
+	}
+
+	100% {
+		opacity: 1;
+		bottom: 4%;
+	}
+}
+
+/* name-tag on page load */
+@keyframes slide-right {
+	0% {
+		left: -350px;
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+		transform: skew(20deg);
+	}
+
+	80% {
+		left: 200px;
+		opacity: 1;
+		transform: skew(0deg);
+	}
+
+	100% {
+		left: 0;
+		opacity: 1;
+		transform: skew(0deg);
+	}
+}
+
+/* name-tag speedlines */
+@keyframes hidethis {
+/*	66% {
+		opacity: 0;
+	}*/
+	100% {
+		opacity: 0;
+	}
+}
+
+/* profile pic on page load */
+@keyframes popup {
+	0% {
+		transform: scale(0);
+		border-radius: 50%;
+	}
+
+	30% {
+		border-radius: 50%;
+	}
+
+	100% {
+		transform: scale(1);
+		border-radius: 0;
+	}
+}
+
+/* Portfolio pics (left side) */
+@keyframes move-right {
+	0% {
+		left: -100%;
+		opacity: 1;
+	}
+
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+/* Portfolio pics (right side) */
+@keyframes move-left {
+	0% {
+		right: -100%;
+		opacity: 1;
+	}
+
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}

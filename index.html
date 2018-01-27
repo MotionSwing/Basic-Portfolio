@@ -2,56 +2,36 @@
 <html>
 <head>
 	<title>Jon White - About</title>
+
+	<!-- Styles -->
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Functions -->
+	<script src="assets/js/script.js"></script>
 </head>
 <body>
 	<div class="container">
-		<header>
-			<div class="main-header">
-				<div class="name-tag"><h1>Jon White</h1></div>
-				<ul>
-					<li><a class="page-link" href="index.html">About</a></li>
-					<li><a class="page-link" href="portfolio.html">Portfolio</a></li>
-					<li><a class="page-link" href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-		</header>
+		<header id="header"><!-- autogenerates --></header>
 		<div class="center-content">
 			<div class="main-content clearfix">
 				<h2>About Me</h2>
-				<img src="assets/images/profile.jpg" alt="Jon White drinking out of a coconut" />
+				<img class="profile" src="assets/images/profile.jpg" title="Sipping on some coconut" alt="Jon White drinking out of a coconut" />
 				<p>This is me sipping out of a coconut in the Philippines. I enjoy traveling, drawing and coding. I'm determined to improve my skills in web design so that I can build fully interactive dynamic web applications with ease.</p>
 				<br />
-				<p>I want to be a part of the push towards automation so that we can focus more time and attention to the things that truly matter. I've been programming on and off for the better part of 15 years now, mostly as just a hobbyist. The world of coding has greatly changed since I first started (back when frames ruled over CSS).</p>
+				<p>I want to be a part of the push towards automation so that we can focus more time and attention to the things that truly matter. I've been programming on and off in Java and Visual Basic for the better part of 15 years now, mostly as just a hobbyist. The world of coding has greatly changed since I first started (back when frames were more prevalent than CSS).</p>
 				<br />
 				<p>I'm looking forward to learning more and eventually working as a freelance full-stack developer.</p>
 			</div>
-			<aside class="connect-with-me">
-				<h3>Connect with Me</h3>
-				<ul class="clearfix">
-					<li>
-						<a href="https://github.com/MotionSwing" title="Fork me on GitHub">
-							<img class="icon" src="assets/images/github-128.png" alt="GitHub">
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/jonathan-white-ba4a2761/" title="Connect with me on Linkedin">
-							<img class="icon" src="assets/images/linkedin-128.png" alt="Linkedin">
-						</a>
-					</li>
-					<li>
-						<a href="https://stackoverflow.com/users/edit/2203530" title="Answer my questions on StackOverflow">
-							<img class="icon" src="assets/images/stackoverflow-128.png" alt="StackOverflow">
-						</a>
-					</li>
-				</ul>
-			</aside>			
+			<aside id="connect-with-me"><!-- autogenerates --></aside>
 		</div>
-
-		<footer>
-			<p>&copy; Copyright 2018 Jon White</p>
-		</footer>
+		<footer id="footer"><!-- autogenerates --></footer>
 	</div>
+
+	<script>
+		load_header();
+		load_connect_icons();
+		load_footer();
+	</script>
 </body>
 </html>
