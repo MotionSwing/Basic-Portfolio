@@ -17,13 +17,20 @@
 			<div class="main-content">
 				<h2>Contact</h2>
 				<form class="contact-form">
-					<label for="submitter-name"><h4>Name</h4></label>
-					<input id="submitter-name" type="text" placeholder="John Smith" name="submitter-name">
-					<label for="submitter-email"><h4>Email</h4></label>
-					<input id="submitter-email" type="email" placeholder="example@gmail.com" name="submitter-email">
-					<label for="submitter-message"><h4>Message</h4></label>
-					<textarea id="submitter-message" cols="30" rows="10" name="submitter-message"></textarea>
-					<a id="send-btn" class="btn" href="mailto:jon.white2@gmail.com" onmouseover="updateMailTo()">Submit</a>
+					<!-- Name -->
+					<label for="submitter-name" class="form-label">Name</label>
+					<input id="submitter-name" type="text" placeholder="John Smith" name="submitter-name" onfocus="updateLabelClass(this.id, 'form-label boom');" onblur="updateLabelClass(this.id, 'form-label');">
+
+					<!-- Email -->
+					<label for="submitter-email" class="form-label">Email</label>
+					<input id="submitter-email" type="email" placeholder="example@gmail.com" name="submitter-email" onfocus="updateLabelClass(this.id, 'form-label boom');" onblur="updateLabelClass(this.id, 'form-label');">
+
+					<!-- Message -->
+					<label for="submitter-message" class="form-label">Message</label>
+					<textarea id="submitter-message" cols="30" rows="10" name="submitter-message" onfocus="updateLabelClass(this.id, 'form-label boom');" onblur="updateLabelClass(this.id, 'form-label');"></textarea>
+
+					<!-- Submit Button -->
+					<a id="send-btn" class="btn" href="mailto:jon.white2@gmail.com" onmouseover="updateMailTo()" target="_blank">Submit</a>
 				</form>
 			</div>
 			<aside id="connect-with-me"><!-- autogenerates --></aside>
@@ -35,23 +42,6 @@
 		load_header();
 		load_connect_icons();
 		load_footer();
-	</script>
-	<script>
-
-		function updateMailTo() {
-			var sName = document.getElementById('submitter-name').value;
-			var sEmail = document.getElementById('submitter-email').value;
-			var sMessage = document.getElementById('submitter-message').value;
-
-			var eMessage = "mailto:jon.white2@gmail.com?Subject=I%20have%20a%20question%20for%20you%20Jon%20White&body=";
-			eMessage += "Name%3A%20" + sName.replace(/\s/g, "%20") + "%0D";
-			eMessage += "Email%3A%20" + sEmail.replace(/\./g, "%2E").replace(/\@/g, "%40") + "%0D";
-			eMessage += "Message%3A%20";
-			eMessage += sMessage.replace(/\s/g, "%20");
-
-			console.log(eMessage);
-			document.getElementById('send-btn').href = eMessage;
-		}
 	</script>
 </body>
 </html>

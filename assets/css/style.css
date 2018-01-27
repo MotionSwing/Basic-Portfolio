@@ -69,8 +69,6 @@ header {
 	font-weight: 800;
 	text-align: center;
 	opacity: 0;
-	-webkit-animation: slide-right 1s 2s linear forwards;
-	-o-animation: slide-right 1s 2s linear forwards;
 	animation: slide-right 1s 2s linear forwards;
 }
 
@@ -83,8 +81,6 @@ header {
 	height: 40px;
 	border-top: 2px solid #bbb;
 	border-bottom: 2px solid #bbb;
-	-webkit-animation: hidethis 500ms 2s linear forwards;
-	-o-animation: hidethis 500ms 2s linear forwards;
 	animation: hidethis 1s 2s linear forwards;
 }
 
@@ -96,8 +92,6 @@ header {
 	width: 20px;
 	height: 1px;
 	border-top: 2px solid #bbb;
-	-webkit-animation: hidethis 1s 2s linear forwards;
-	-o-animation: hidethis 1s 2s linear forwards;
 	animation: hidethis 1s 2s linear forwards;
 }
 
@@ -110,20 +104,14 @@ header {
 }
 
 .main-header .menuitem-1 {
-	-webkit-animation: bounce 2s 400ms linear forwards;
-	-o-animation: bounce 2s 400ms linear forwards;
 	animation: bounce 2s 400ms linear forwards;	
 }
 
 .main-header .menuitem-2 {
-	-webkit-animation: bounce 2s 100ms linear forwards;
-	-o-animation: bounce 2s 100ms linear forwards;
 	animation: bounce 2s 100ms linear forwards;	
 }
 
 .main-header .menuitem-3 {
-	-webkit-animation: bounce 2s 700ms linear forwards;
-	-o-animation: bounce 2s 700ms linear forwards;
 	animation: bounce 2s 700ms linear forwards;	
 }
 
@@ -150,6 +138,7 @@ header {
 .main-header a:hover {
 	border-bottom: 3px solid #4aaaa5;
 	color: #4aaaa5;
+	animation: bounce-c 200ms 300ms linear forwards;
 }
 
 /*--------------*/
@@ -213,8 +202,6 @@ footer p {
 }
 
 .main-content .profile {
-	-webkit-animation: popup 1s linear;
-	-o-animation: popup 1s linear;
 	animation: popup 1s linear;
 }
 
@@ -231,31 +218,45 @@ footer p {
 }
 
 /* Contact Page */
-.main-content h4 {
+.contact-form h4 {
 	color: #777;
 	font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 18px;
 	/*margin: 5px 0;*/
 }
 
-.main-content input,
-.main-content textarea {
+.contact-form .form-label {
+	color: #777;
+	font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;	
+}
+
+.contact-form input,
+.contact-form textarea {
 	margin: 10px 0 15px 0;
 	padding: 5px;
 	width: 100%;
 	border: 1px solid #ddd;
 }
 
-.main-content input::placeholder,
-.main-content textarea::placeholder {
+.contact-form input:focus {
+	box-shadow: 0 0 10px rgba(0, 102, 255, .5);
+}
+
+.boom {
+	text-shadow: 0 0 10px rgba(0, 102, 255, .5);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
 	color: #bbb;
 }
 
-.main-content textarea {
+.contact-form textarea {
 	margin-bottom: 25px;
 }
 
-.main-content .btn {
+.contact-form .btn {
 	background-color: #4aaaa5;
 	color: #fff;
 	font-size: 18px;
@@ -266,7 +267,7 @@ footer p {
 	margin-bottom: 20px;
 }
 
-.main-content .btn:hover {
+.contact-form .btn:hover {
 	box-shadow: 0 0 10px rgba(0, 102, 255, 1);
 }
 
@@ -301,20 +302,14 @@ footer p {
 	font-size: 20px;	
 	text-align: center;
 	line-height: 2.7em;	
-	-webkit-animation: bounce-b 2s 3s linear forwards;
-	-o-animation: bounce-b 2s 3s linear forwards;
 	animation: bounce-b 2s 3s linear forwards;
 }
 
 .icon-left {
-	-webkit-animation: move-right 500ms forwards;
-	-o-animation: move-right 500ms forwards;
 	animation: move-right 500ms forwards;
 }
 
 .icon-right {
-	-webkit-animation: move-left 500ms forwards;
-	-o-animation: move-left 500ms forwards;
 	animation: move-left 500ms forwards;
 }
 
@@ -333,8 +328,8 @@ footer p {
 /* SVG Style 1 */
 
 .dash {
-	stroke-dasharray: 1000;
-	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000px;
+	stroke-dashoffset: 1000px;
 	transition: stroke-dashoffset 0.7s;  /* Controls the speed of the line */
 }
 
@@ -399,28 +394,20 @@ svg {
 }
 
 #connect-with-me li.icon-1 {
-	-webkit-animation: icon-phase-in 1s linear forwards;
-	-o-animation: icon-phase-in 1s linear forwards;
 	animation: icon-phase-in 1s linear forwards;
 }
 
 #connect-with-me li.icon-2 {
 	opacity: 0;
-	-webkit-animation: icon-phase-in 1s 300ms linear forwards;
-	-o-animation: icon-phase-in 1s 300ms linear forwards;
 	animation: icon-phase-in 1s 300ms linear forwards;
 }
 
 #connect-with-me li.icon-3 {
 	opacity: 0;
-	-webkit-animation: icon-phase-in 1s 600ms linear forwards;
-	-o-animation: icon-phase-in 1s 600ms linear forwards;
 	animation: icon-phase-in 1s 600ms linear forwards;
 }
 
 #connect-with-me img:hover {
-	-webkit-animation: shrink-splash 1s 300ms linear;
-	-o-animation: shrink-splash 1s 300ms linear;
 	animation: shrink-splash 1s 300ms linear;
 }
 
@@ -530,6 +517,21 @@ svg {
 	100% {
 		opacity: 1;
 		bottom: 4%;
+	}
+}
+
+@keyframes bounce-c {
+
+	0% {
+		top: 0;
+	}
+
+	50% {
+		top: -10px;
+	}
+
+	100% {
+		top: 0;
 	}
 }
 

@@ -1,5 +1,4 @@
-// Connect with Me
-
+// Connect with Me aside
 function load_connect_icons() {
 	var social = [
 		{
@@ -62,3 +61,25 @@ function load_header() {
 function load_footer() {
 	document.getElementById('footer').innerHTML = '<p>&copy; Copyright 2018 Jon White</p>'
 };
+
+// Update mailto with form details
+function updateMailTo() {
+	var sName = document.getElementById('submitter-name').value;
+	var sEmail = document.getElementById('submitter-email').value;
+	var sMessage = document.getElementById('submitter-message').value;
+
+	var eMessage = "mailto:jon.white2@gmail.com?Subject=I%20have%20a%20question%20for%20you%20Jon%20White&body=";
+	eMessage += "Name%3A%20" + sName.replace(/\s/g, "%20") + "%0D";
+	eMessage += "Email%3A%20" + sEmail.replace(/\./g, "%2E").replace(/\@/g, "%40") + "%0D";
+	eMessage += "Message%3A%20";
+	eMessage += sMessage.replace(/\s/g, "%20");
+
+	console.log(eMessage);
+	document.getElementById('send-btn').href = eMessage;
+}
+
+// Style Form Labels after hovering over their corresponding input
+function updateLabelClass(e,c){
+	var label = document.getElementById(e).previousSibling.previousSibling;
+	label.className = c;
+}
